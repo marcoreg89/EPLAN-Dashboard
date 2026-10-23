@@ -2318,7 +2318,7 @@ function Settings({
                   color: "rgba(0,0,0,0.55)"
                 }
               },
-              "Archivio Dati OneDrive (senza Node.js)"
+              "OneDrive Data Archive"
             ),
             h(
               "div",
@@ -2328,17 +2328,17 @@ function Settings({
                   color: "rgba(0,0,0,0.65)"
                 }
               },
-              "Se hai collegato la cartella OneDrive dal pulsante in alto, i file ",
+              "If you connected the OneDrive folder from the button above, files ",
               h(Mono, null, "store.json"),
               ", ",
               h(Mono, null, "store-data.js"),
-              " e i PDF vengono salvati in automatico. In alternativa puoi esportare o caricare manualmente il file dati qui:"
+              " and PDFs are saved automatically. Alternatively, you can manually export or upload the data file here::"
             ),
             h(
               "div",
               { style: { display: "flex", flexWrap: "wrap", gap: 8 } },
-              h("button", { type: "button", onClick: exportStoreDataFile, style: secondaryBtnStyle }, "Esporta store-data.js"),
-              h("button", { type: "button", onClick: exportStoreJsonFile, style: secondaryBtnStyle }, "Esporta store.json"),
+              h("button", { type: "button", onClick: exportStoreDataFile, style: secondaryBtnStyle }, "Export store-data.js"),
+              h("button", { type: "button", onClick: exportStoreJsonFile, style: secondaryBtnStyle }, "Export store.json"),
               h("input", {
                 ref: importInputRef,
                 type: "file",
@@ -2349,7 +2349,7 @@ function Settings({
               h(
                 "button",
                 { type: "button", onClick: () => importInputRef.current && importInputRef.current.click(), style: secondaryBtnStyle },
-                "Carica file dati…"
+                "Upload data file…"
               )
             )
           )
