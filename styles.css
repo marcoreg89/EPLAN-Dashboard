@@ -1,0 +1,286 @@
+:root {
+  /* Neutral surfaces & typography (Executive Navy & Soft Pastels Light) */
+  --ground: #F5F7FA;
+  --surface: #FFFFFF;
+  --ink: #1A202C;
+  --muted: #5A6A80;
+  --faint: #8896AB;
+  --hairline: #EDF1F5;
+  --subtle-bg: #F0F4F8;
+  --track-bg: #EEF2F6;
+  --input-bg: #FFFFFF;
+  --input-border: #CBD5E1;
+  --bar-workable: #E8ECF2;
+  --bar-worked: #D3DAE2;
+  --target-tick: #1E3A5F;
+  --avg-line: #1E3A5F;
+  --hero-color: #1E3A5F;
+  --card-border: #E2E8F0;
+  --card-radius: 26px;
+  --control-radius: 20px;
+
+  /* 1. BLU NOTTE (Hero Variable, Totale Annuo, Import PDF) */
+  --color-blue: #1E3A5F;
+  --color-blue-bg: #E8EFF8;
+  --color-blue-text: #1E3A5F;
+  --color-blue-border: #C7D8EC;
+
+  /* 2. VERDE SALVIA (Commissione A, Attività Lavorata, Ahead, Success >80%) */
+  --color-green: #3B9A76;
+  --color-green-bg: #E6F5EE;
+  --color-green-text: #1D5C43;
+  --color-green-border: #B7E4CF;
+
+  /* 3. VIOLA ARDESIA (Commissione B, Budget Aziendale, Demo Mode) */
+  --color-purple: #5E548E;
+  --color-purple-bg: #EFEBF6;
+  --color-purple-text: #372E5D;
+  --color-purple-border: #D2C8E7;
+
+  /* 4. AMBRA MIELE (50–80%, Pacing warning, Privacy, Simulated, Acceleratore) */
+  --color-amber: #E29D42;
+  --color-amber-bg: #FEF6EA;
+  --color-amber-text: #7C4F13;
+  --color-amber-border: #F8DCB5;
+
+  /* 5. CORALLO / TERRACOTTA (<50%, Ritardo/Behind, Log out, Exit, Reset, Errori) */
+  --color-red: #DE6B62;
+  --color-red-bg: #FDEEEB;
+  --color-red-text: #7A2E27;
+  --color-red-border: #F7CAC5;
+
+  /* Semantic status mappings directly using the 5 colors */
+  --status-ahead-bg: var(--color-green-bg);
+  --status-ahead-border: var(--color-green-border);
+  --status-amber-bg: var(--color-amber-bg);
+  --status-amber-border: var(--color-amber-border);
+  --status-behind-bg: var(--color-red-bg);
+  --status-behind-border: var(--color-red-border);
+
+  /* Action buttons & badges */
+  --btn-primary-bg: var(--color-blue-bg);
+  --btn-primary-color: var(--color-blue-text);
+  --btn-primary-border: var(--color-blue-border);
+  --btn-exit-bg: var(--color-red-bg);
+  --btn-exit-color: var(--color-red-text);
+  --btn-exit-border: var(--color-red-border);
+  --demo-badge-bg: var(--color-purple-bg);
+  --demo-badge-color: var(--color-purple-text);
+  --demo-badge-border: var(--color-purple-border);
+}
+
+[data-theme="dark"] {
+  /* Neutral surfaces & typography (Material You Dark) */
+  --ground: #131314;
+  --surface: #1E1F20;
+  --ink: #E3E3E3;
+  --muted: #C4C7C5;
+  --faint: #8E918F;
+  --hairline: #36393E;
+  --subtle-bg: #282A2C;
+  --track-bg: #282A2C;
+  --input-bg: #1E1F20;
+  --input-border: #5E6267;
+  --bar-workable: #282A2C;
+  --bar-worked: rgba(255, 255, 255, 0.08);
+  --target-tick: #E3E3E3;
+  --avg-line: #A8C7FA;
+  --hero-color: #A8C7FA;
+  --card-border: #36393E;
+  --card-radius: 26px;
+  --control-radius: 20px;
+
+  /* 1. AZZURRO (Google Pastel Blue 200 - Hero Variable, Totale Annuo, Import PDF) */
+  --color-blue: #A8C7FA;
+  --color-blue-bg: rgba(168, 199, 250, 0.14);
+  --color-blue-text: #D3E3FD;
+  --color-blue-border: rgba(168, 199, 250, 0.35);
+
+  /* 2. VERDE (Vibrant Emerald - Commissione A, Attività Lavorata, Ahead, Success) */
+  --color-green: #10B981;
+  --color-green-bg: rgba(16, 185, 129, 0.14);
+  --color-green-text: #6EE7B7;
+  --color-green-border: rgba(16, 185, 129, 0.35);
+
+  /* 3. VIOLA (Google Pastel Purple / Lavender 200 - Commissione B, Budget Aziendale, Demo Mode) */
+  --color-purple: #D0BCFF;
+  --color-purple-bg: rgba(208, 188, 255, 0.14);
+  --color-purple-text: #E8DEF8;
+  --color-purple-border: rgba(208, 188, 255, 0.35);
+
+  /* 4. GIALLO / AMBRA (Vibrant Gold - Pacing warning, Privacy, Simulated, Acceleratore) */
+  --color-amber: #F59E0B;
+  --color-amber-bg: rgba(245, 158, 11, 0.14);
+  --color-amber-text: #FCD34D;
+  --color-amber-border: rgba(245, 158, 11, 0.35);
+
+  /* 5. ROSSO (Vibrant Coral Red - Ritardo/Behind, Log out, Exit, Reset, Errori) */
+  --color-red: #EF4444;
+  --color-red-bg: rgba(239, 68, 68, 0.14);
+  --color-red-text: #FCA5A5;
+  --color-red-border: rgba(239, 68, 68, 0.35);
+
+  /* Semantic status mappings directly using the 5 colors */
+  --status-ahead-bg: var(--color-green-bg);
+  --status-ahead-border: var(--color-green-border);
+  --status-amber-bg: var(--color-amber-bg);
+  --status-amber-border: var(--color-amber-border);
+  --status-behind-bg: var(--color-red-bg);
+  --status-behind-border: var(--color-red-border);
+
+  /* Action buttons & badges */
+  --btn-primary-bg: #A8C7FA;
+  --btn-primary-color: #062E6F;
+  --btn-primary-border: #A8C7FA;
+  --btn-exit-bg: var(--color-red-bg);
+  --btn-exit-color: var(--color-red);
+  --btn-exit-border: var(--color-red-border);
+  --demo-badge-bg: var(--color-purple-bg);
+  --demo-badge-color: var(--color-purple-text);
+  --demo-badge-border: var(--color-purple-border);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: 'Google Sans Text', 'Google Sans', sans-serif;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+a {
+  color: var(--hero-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+input {
+  font: inherit;
+  color: var(--ink);
+  border-radius: 12px;
+}
+
+button {
+  font-family: 'Google Sans Text', 'Google Sans', sans-serif !important;
+  color: inherit;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+button:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+[data-theme="dark"] button:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+@keyframes eplanCardIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  99% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes eplanBarGrowY { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes eplanBarGrowX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes eplanFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes eplanPopoverInDown { from { opacity: 0; transform: translateY(-5px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes eplanPopoverInUp { from { opacity: 0; transform: translateY(5px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes eplanPulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(176, 96, 0, 0.55); }
+  50% { opacity: 0.22; transform: scale(0.86); box-shadow: 0 0 0 4px rgba(176, 96, 0, 0); }
+}
+
+.eplan-card {
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+[data-theme="dark"] .eplan-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+.eplan-card:hover {
+  z-index: 20;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] .eplan-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.eplan-month-col {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+.eplan-month-col:hover {
+  transform: translateY(-3px);
+}
+.eplan-month-track {
+  transition: box-shadow 0.22s ease, outline-color 0.22s ease;
+  outline: 1px solid transparent;
+  border-radius: 12px;
+}
+.eplan-month-col:hover .eplan-month-track {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  outline: 1px solid var(--input-border);
+}
+.eplan-month-grid:hover .eplan-month-col:not(:hover) {
+  opacity: 0.62;
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 7mm; }
+  :root, html[data-theme="dark"], [data-theme="dark"] {
+    --ground: #F5F7FA !important;
+    --surface: #FFFFFF !important;
+    --ink: #1A202C !important;
+    --muted: #5A6A80 !important;
+    --faint: #8896AB !important;
+    --hairline: #EDF1F5 !important;
+    --subtle-bg: #F0F4F8 !important;
+    --track-bg: #EEF2F6 !important;
+    --input-bg: #FFFFFF !important;
+    --input-border: #CBD5E1 !important;
+    --bar-workable: #E8ECF2 !important;
+    --bar-worked: #D3DAE2 !important;
+    --target-tick: #1E3A5F !important;
+    --avg-line: #1E3A5F !important;
+    --hero-color: #1E3A5F !important;
+    --status-behind-bg: #FDEEEB !important;
+    --status-behind-border: #F7CAC5 !important;
+    --status-amber-bg: #FEF6EA !important;
+    --status-amber-border: #F8DCB5 !important;
+    --status-ahead-bg: #E6F5EE !important;
+    --status-ahead-border: #B7E4CF !important;
+    --card-border: #E2E8F0 !important;
+    color-scheme: light !important;
+  }
+  html, body {
+    background: #F5F7FA !important;
+    color: #1A202C !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .eplan-app-shell { height: auto !important; overflow: visible !important; zoom: 0.78; }
+  .eplan-scroll-shell { overflow: visible !important; }
+  .eplan-no-print { display: none !important; }
+  header > div:first-child { padding-bottom: 12px !important; }
+  main { min-width: 1300px !important; min-height: 0 !important; padding: 18px 22px !important; }
+  .eplan-card { break-inside: avoid; page-break-inside: avoid; }
+}
+
+@keyframes eplanDemoPulse {
+  0% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0.7); transform: scale(0.95); }
+  70% { box-shadow: 0 0 0 6px rgba(103, 80, 164, 0); transform: scale(1.15); }
+  100% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0); transform: scale(0.95); }
+}
