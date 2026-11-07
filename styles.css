@@ -284,3 +284,50 @@ button:hover:not(:disabled) {
   70% { box-shadow: 0 0 0 6px rgba(103, 80, 164, 0); transform: scale(1.15); }
   100% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0); transform: scale(0.95); }
 }
+
+/* Mantiene SEMPRE la salita delle schede (eplanCardIn), 
+   bloccando solo il rigonfiamento delle barre (eplanBarGrow) dopo la prima visita */
+.tab-visited-dashboard .eplan-tab-dashboard [style*="eplanBarGrowX"],
+.tab-visited-dashboard .eplan-tab-dashboard [style*="eplanBarGrowY"],
+.tab-visited-dashboard .eplan-tab-dashboard [style*="eplanFadeIn"],
+.tab-visited-dashboard .eplan-tab-dashboard .eplan-month-col *,
+.tab-visited-dashboard .eplan-tab-dashboard .eplan-month-track * {
+  animation: none !important;
+}
+
+.tab-visited-months .eplan-tab-months [style*="eplanBarGrowX"],
+.tab-visited-months .eplan-tab-months [style*="eplanBarGrowY"],
+.tab-visited-months .eplan-tab-months [style*="eplanFadeIn"] {
+  animation: none !important;
+}
+
+/* Transizione morbida tra Curve e Insights */
+.card-view-container {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
+  display: grid;
+  grid-template-areas: "view";
+}
+
+.card-view-panel {
+  grid-area: view;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-view-panel.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.card-view-panel.inactive {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  visibility: hidden;
+}
+
