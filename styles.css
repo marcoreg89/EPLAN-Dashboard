@@ -291,6 +291,18 @@ button:hover:not(:disabled) {
   100% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0); transform: scale(0.95); }
 }
 
+.eplan-simulated-btn {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.eplan-simulated-btn:hover {
+  filter: brightness(1.18) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3) !important;
+}
+.eplan-simulated-btn:active {
+  transform: translateY(0) !important;
+}
+
 /* Mantiene SEMPRE la salita delle schede (eplanCardIn), 
    bloccando solo il rigonfiamento delle barre (eplanBarGrow) dopo la prima visita */
 .tab-visited-dashboard .eplan-tab-dashboard [style*="eplanBarGrowX"],
