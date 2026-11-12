@@ -414,6 +414,7 @@ button:hover:not(:disabled) {
   color: var(--ink);
   border: 1px solid var(--card-border);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Google Sans Text', 'Google Sans', sans-serif !important;
 }
 [data-theme="dark"] .eplan-month-tooltip {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
