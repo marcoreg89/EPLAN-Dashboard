@@ -65,7 +65,7 @@
   --btn-exit-color: var(--color-red-text);
   --btn-exit-border: var(--color-red-border);
   --demo-badge-bg: var(--color-purple-bg);
-  --demo-badge-color: var(--color-purple-text);
+  --demo-badge-color: var(--color-purple);
   --demo-badge-border: var(--color-purple-border);
 }
 
@@ -136,7 +136,7 @@
   --btn-exit-color: var(--color-red);
   --btn-exit-border: var(--color-red-border);
   --demo-badge-bg: var(--color-purple-bg);
-  --demo-badge-color: var(--color-purple-text);
+  --demo-badge-color: var(--color-purple);
   --demo-badge-border: var(--color-purple-border);
 
   color-scheme: dark;
@@ -286,9 +286,20 @@ button:hover:not(:disabled) {
 }
 
 @keyframes eplanDemoPulse {
-  0% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0.7); transform: scale(0.95); }
-  70% { box-shadow: 0 0 0 6px rgba(103, 80, 164, 0); transform: scale(1.15); }
-  100% { box-shadow: 0 0 0 0 rgba(103, 80, 164, 0); transform: scale(0.95); }
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(168, 130, 255, 0.75), 0 0 6px var(--color-purple);
+  }
+  50% {
+    opacity: 0.22;
+    transform: scale(0.82);
+    box-shadow: 0 0 0 5px rgba(168, 130, 255, 0), 0 0 2px var(--color-purple);
+  }
+}
+
+.eplan-demo-dot {
+  animation: eplanDemoPulse 1.5s infinite ease-in-out;
 }
 
 .eplan-simulated-btn {
@@ -386,7 +397,7 @@ button:hover:not(:disabled) {
   justify-content: center;
   min-width: 20px;
   padding: 2px 7px;
-  font-family: 'JetBrains Mono', 'Roboto Mono', 'Segoe UI Mono', monospace;
+  font-family: 'Google Sans', 'Google Sans Text', sans-serif;
   font-size: 11px;
   font-weight: 600;
   border-radius: 6px;
@@ -604,4 +615,96 @@ button:hover:not(:disabled) {
   .eplan-dash-grid {
     min-height: 620px !important;
   }
+}
+
+/* =========================================================
+   DEMO MODE SPOTLIGHT TUTORIAL (GUIDED TOUR)
+   ========================================================= */
+[data-tour] {
+  will-change: filter, opacity, box-shadow;
+  transition: filter 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+body[data-tour-step="hero"] [data-tour]:not([data-tour="hero"]),
+body[data-tour-step="months"] [data-tour]:not([data-tour="months"]),
+body[data-tour-step="payout"] [data-tour]:not([data-tour="payout"]),
+body[data-tour-step="summary"] [data-tour]:not([data-tour="summary"]),
+body[data-tour-step="mb-table"] [data-tour]:not([data-tour="mb-table"]),
+body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]),
+body[data-tour-step="set-a"] [data-tour]:not([data-tour="set-a"]),
+body[data-tour-step="set-b"] [data-tour]:not([data-tour="set-b"]) {
+  filter: blur(4px) saturate(65%) brightness(0.58) !important;
+  opacity: 0.28 !important;
+  pointer-events: none !important;
+}
+
+[data-theme="light"] body[data-tour-step="hero"] [data-tour]:not([data-tour="hero"]),
+[data-theme="light"] body[data-tour-step="months"] [data-tour]:not([data-tour="months"]),
+[data-theme="light"] body[data-tour-step="payout"] [data-tour]:not([data-tour="payout"]),
+[data-theme="light"] body[data-tour-step="summary"] [data-tour]:not([data-tour="summary"]),
+[data-theme="light"] body[data-tour-step="mb-table"] [data-tour]:not([data-tour="mb-table"]),
+[data-theme="light"] body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]),
+[data-theme="light"] body[data-tour-step="set-a"] [data-tour]:not([data-tour="set-a"]),
+[data-theme="light"] body[data-tour-step="set-b"] [data-tour]:not([data-tour="set-b"]) {
+  filter: blur(4px) saturate(70%) brightness(0.92) !important;
+  opacity: 0.34 !important;
+}
+
+body[data-tour-step="hero"] [data-tour="hero"],
+body[data-tour-step="months"] [data-tour="months"],
+body[data-tour-step="payout"] [data-tour="payout"],
+body[data-tour-step="summary"] [data-tour="summary"],
+body[data-tour-step="mb-table"] [data-tour="mb-table"],
+body[data-tour-step="mb-footer"] [data-tour="mb-footer"],
+body[data-tour-step="set-a"] [data-tour="set-a"],
+body[data-tour-step="set-b"] [data-tour="set-b"] {
+  position: relative;
+  z-index: 45 !important;
+  filter: none !important;
+  opacity: 1 !important;
+  border-color: var(--color-blue) !important;
+  box-shadow: 0 0 0 2px var(--color-blue),
+              0 0 28px var(--color-blue-bg),
+              0 18px 44px rgba(0, 0, 0, 0.48) !important;
+}
+
+@keyframes eplanTourBarFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.eplan-tour-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--color-blue);
+  transform-origin: left center;
+  will-change: transform;
+  animation: eplanTourBarFill 6s linear forwards;
+}
+
+.eplan-tour-coachmark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 380px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1.5px solid var(--color-blue);
+  border-radius: 20px;
+  padding: 16px 20px 15px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65),
+              0 0 0 1px var(--color-blue-border);
+  font-family: 'Google Sans Text', 'Google Sans', sans-serif;
+  will-change: transform;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.25s ease;
+  user-select: none;
+}
+
+.eplan-tour-trigger-btn:hover {
+  filter: brightness(1.1);
 }
