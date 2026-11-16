@@ -633,9 +633,7 @@ body[data-tour-step="months"] [data-tour]:not([data-tour="months"]),
 body[data-tour-step="payout"] [data-tour]:not([data-tour="payout"]),
 body[data-tour-step="summary"] [data-tour]:not([data-tour="summary"]),
 body[data-tour-step="mb-table"] [data-tour]:not([data-tour="mb-table"]),
-body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]),
-body[data-tour-step="set-a"] [data-tour]:not([data-tour="set-a"]),
-body[data-tour-step="set-b"] [data-tour]:not([data-tour="set-b"]) {
+body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]) {
   filter: blur(4px) saturate(65%) brightness(0.58) !important;
   opacity: 0.28 !important;
   pointer-events: none !important;
@@ -646,9 +644,7 @@ body[data-tour-step="set-b"] [data-tour]:not([data-tour="set-b"]) {
 [data-theme="light"] body[data-tour-step="payout"] [data-tour]:not([data-tour="payout"]),
 [data-theme="light"] body[data-tour-step="summary"] [data-tour]:not([data-tour="summary"]),
 [data-theme="light"] body[data-tour-step="mb-table"] [data-tour]:not([data-tour="mb-table"]),
-[data-theme="light"] body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]),
-[data-theme="light"] body[data-tour-step="set-a"] [data-tour]:not([data-tour="set-a"]),
-[data-theme="light"] body[data-tour-step="set-b"] [data-tour]:not([data-tour="set-b"]) {
+[data-theme="light"] body[data-tour-step="mb-footer"] [data-tour]:not([data-tour="mb-footer"]) {
   filter: blur(4px) saturate(70%) brightness(0.92) !important;
   opacity: 0.34 !important;
 }
@@ -658,9 +654,7 @@ body[data-tour-step="months"] [data-tour="months"],
 body[data-tour-step="payout"] [data-tour="payout"],
 body[data-tour-step="summary"] [data-tour="summary"],
 body[data-tour-step="mb-table"] [data-tour="mb-table"],
-body[data-tour-step="mb-footer"] [data-tour="mb-footer"],
-body[data-tour-step="set-a"] [data-tour="set-a"],
-body[data-tour-step="set-b"] [data-tour="set-b"] {
+body[data-tour-step="mb-footer"] [data-tour="mb-footer"] {
   position: relative;
   z-index: 45 !important;
   filter: none !important;
