@@ -694,11 +694,88 @@ body[data-tour-step="mb-footer"] [data-tour="mb-footer"] {
               0 0 0 1px var(--color-blue-border);
   font-family: 'Google Sans Text', 'Google Sans', sans-serif;
   will-change: transform;
+  animation: eplanFadeIn 0.22s ease;
+  user-select: none;
+}
+
+.eplan-tour-coachmark.is-ready {
   transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
               opacity 0.25s ease;
-  user-select: none;
 }
 
 .eplan-tour-trigger-btn:hover {
   filter: brightness(1.1);
+}
+
+/* =========================================================
+   EXPANDING HEADER ACTION PILLS (PRIVACY, THEME, TUTORIAL, SETTINGS)
+   ========================================================= */
+.eplan-hdr-exp-btn {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  cursor: pointer;
+  overflow: hidden;
+  font: 500 12.5px/1 'Google Sans Text', 'Google Sans', sans-serif;
+  transition: background-color 0.22s ease,
+              border-color 0.22s ease,
+              color 0.22s ease,
+              padding 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.22s ease,
+              filter 0.18s ease !important;
+}
+
+.eplan-hdr-exp-btn:hover {
+  padding: 0 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.eplan-hdr-exp-amber {
+  background: var(--color-amber-bg);
+  border: 1px solid var(--color-amber-border);
+  color: var(--color-amber);
+}
+
+.eplan-hdr-exp-purple {
+  background: var(--color-purple-bg);
+  border: 1px solid var(--color-purple-border);
+  color: var(--color-purple);
+}
+
+.eplan-hdr-exp-blue {
+  background: var(--color-blue-bg);
+  border: 1px solid var(--color-blue-border);
+  color: var(--color-blue);
+}
+
+.eplan-hdr-exp-green {
+  background: var(--color-green-bg);
+  border: 1px solid var(--color-green-border);
+  color: var(--color-green);
+}
+
+.eplan-hdr-exp-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 0;
+  transition: max-width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.22s ease,
+              margin-right 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.eplan-hdr-exp-btn:hover .eplan-hdr-exp-label {
+  max-width: 76px;
+  opacity: 1;
+  margin-right: 6px;
+}
+
+.eplan-hdr-gear-btn:hover svg {
+  transform: rotate(45deg) !important;
 }
